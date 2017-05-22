@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.news.MainActivity;
+import com.example.news.activity.MainActivity;
 import com.example.news.R;
 
 public class Guide3 extends Fragment {

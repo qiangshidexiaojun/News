@@ -1,4 +1,4 @@
-package com.example.news;
+package com.example.news.util;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;

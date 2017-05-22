@@ -1,4 +1,4 @@
-package com.example.news;
+package com.example.news.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.news.Adapter.MyPageAdapter;
 import com.example.news.Fragment.NewsFragment;
+import com.example.news.R;
 
 import java.util.ArrayList;
 
@@ -37,6 +38,7 @@ public class MainActivity extends FragmentActivity {
 
         mPageAdapter = new MyPageAdapter(getSupportFragmentManager(), mFragmentArrayList, mTitleList);
         mViewPager.setAdapter(mPageAdapter);
+        mViewPager.setOffscreenPageLimit(4);
 
         mTabLayout.setupWithViewPager(mViewPager);
 

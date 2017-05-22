@@ -1,4 +1,4 @@
-package com.example.news;
+package com.example.news.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.view.Window;
 
 import com.example.news.Guide.GuideActivity;
+import com.example.news.R;
 
 /**
  * Created by Anonymous on 2016/3/25.

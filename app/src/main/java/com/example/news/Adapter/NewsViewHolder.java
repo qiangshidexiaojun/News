@@ -10,14 +10,15 @@ import com.example.news.R;
 /**
  * Created by 李志军 on 2017/5/18.
  */
-public class NewsViewHolder extends RecyclerView.ViewHolder{
+public class NewsViewHolder extends RecyclerView.ViewHolder {
 
     ImageView imgView;
     TextView titleView;
+    View view;
 
     public NewsViewHolder(View itemView) {
         super(itemView);
-
+        view = itemView;
         imgView = (ImageView) itemView.findViewById(R.id.item_img);
         titleView = (TextView) itemView.findViewById(R.id.item_title);
     }

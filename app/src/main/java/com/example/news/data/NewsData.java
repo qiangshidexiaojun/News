@@ -1,4 +1,4 @@
-package com.example.news;
+package com.example.news.data;
 
 import java.util.List;
 

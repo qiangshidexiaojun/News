@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Window;
 
-import com.example.news.DepthPageTransformer;
+import com.example.news.util.DepthPageTransformer;
 import com.example.news.R;
 
 import java.util.ArrayList;

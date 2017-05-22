@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.news.Adapter.NewsAdapter;
-import com.example.news.NewsData;
+import com.example.news.data.NewsData;
 import com.example.news.R;
 import com.google.gson.Gson;
 
