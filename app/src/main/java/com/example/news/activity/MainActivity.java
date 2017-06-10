@@ -3,6 +3,7 @@ package com.example.news.activity;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import com.example.news.Adapter.MyPageAdapter;
 import com.example.news.Fragment.NewsFragment;
 import com.example.news.R;
+import com.roughike.bottombar.BottomBar;
 
 import java.util.ArrayList;
 
@@ -19,9 +21,10 @@ public class MainActivity extends FragmentActivity {
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
     private MyPageAdapter mPageAdapter;
+    private FragmentManager mFragmentManager;
     private ArrayList<NewsFragment> mFragmentArrayList = new ArrayList<NewsFragment>();
     private ArrayList<String> mTitleList = new ArrayList<String>();
-
+    private BottomBar mBottomBar;
     private TextView mTitle;
     private ImageView search;
 
@@ -32,6 +35,7 @@ public class MainActivity extends FragmentActivity {
 
         initFragmentArrayList();
         initTitleList();
+
 
         mTabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -44,8 +48,10 @@ public class MainActivity extends FragmentActivity {
 
 
         mTitle = (TextView) findViewById(R.id.title);
-        mTitle.setText("News");
         search = (ImageView) findViewById(R.id.search);
+        mTitle.setVisibility(View.VISIBLE);
+        mTitle.setText("News");
+        search.setVisibility(View.VISIBLE);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,8 +59,8 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
-
     }
+
 
     private void initTitleList() {
         mTitleList.add("头条");
@@ -90,6 +96,6 @@ public class MainActivity extends FragmentActivity {
         mFragmentArrayList.add(ftiyu);
         mFragmentArrayList.add(fkeji);
 
-
     }
+
 }

@@ -12,7 +12,21 @@
         android:text="标题"
         android:layout_marginLeft="15dp"
         android:layout_centerVertical="true"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:text="登陆"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textColor="@android:color/white"
+        android:visibility="gone"
+        />
 
 
     <ImageView
@@ -23,6 +37,7 @@
         android:background="@drawable/search_bg"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
+        android:visibility="gone"
         />
 
 </RelativeLayout>

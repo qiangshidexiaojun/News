@@ -1,5 +1,6 @@
 package com.example.news.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -7,10 +8,12 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import com.example.news.data.CommentData;
 import com.example.news.R;
+import com.example.news.data.CommentData;
 
+import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 
@@ -37,7 +40,7 @@ public class ReadActivity extends AppCompatActivity {
         newsKey = getIntent().getStringExtra(KEY_EXTRA);
         newsTitle = getIntent().getStringExtra(TITLE_EXTRA);
 
-        if(url != null && url.length()>0){
+        if (url != null && url.length() > 0) {
             newsWebview.loadUrl(url);
         }
 
@@ -51,7 +54,15 @@ public class ReadActivity extends AppCompatActivity {
         btnComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phone = "13250465197";
+                BmobUser user = BmobUser.getCurrentUser();
+                if(user == null){
+                    startActivity(new Intent(ReadActivity.this,LoginActivity.class));
+                    Toast.makeText(ReadActivity.this, "检测到您还没有登陆，请先登陆", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                String phone = BmobUser.getCurrentUser().getMobilePhoneNumber();
+
+                //String phone = "13250465197";
                 String content = edtComment.getText().toString();
                 CommentData data = new CommentData();
                 data.setContent(content);
@@ -62,7 +73,7 @@ public class ReadActivity extends AppCompatActivity {
                     @Override
                     public void done(String s, BmobException e) {
                         if(e == null){
-                            Log.e("AAA","save comment success");
+                            Log.e("AAA", "save comment success");
                         }
                     }
                 });

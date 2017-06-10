@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs xmlns:android="http://schemas.android.com/apk/res/android">
+    <tabs>
+        <tab
+            id="@+id/tab_news"
+            icon="@mipmap/ic_conversation_selected_2"
+            title="新闻"/>
+            <!--barColorWhenSelected="#5D4037"-->
+
+        <tab
+            id="@+id/tab_weather"
+            icon="@mipmap/ic_plugin_selected_2"
+            title="天气" />
+            <!--barColorWhenSelected="@color/colorPrimary"-->
+
+        <tab
+            id="@+id/tab_joke"
+            icon="@mipmap/ic_plugin_selected_2"
+            title="笑话" />
+        <!--barColorWhenSelected="@color/colorPrimary"-->
+
+        <tab
+            id="@+id/tab_me"
+            icon="@mipmap/ic_contact_selected_2"
+            title="联系人"/>
+        <!--barColorWhenSelected="@color/colorAccent"-->
+
+
+    </tabs>
+</tabs>
